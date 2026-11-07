@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installer StreamX</title>
+<meta name="description" content="Installer StreamX sur Android TV et Fire TV avec Downloader.">
+<style>
+  :root { --bg:#0a0820; --card:#14123a; --line:#2a2760; --text:#f2f0ff; --muted:#a9a5d6; --acc:#a66bff; --acc2:#3de0c5; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) { --bg:#f5f3ff; --card:#ffffff; --line:#ddd8ff; --text:#1b1840; --muted:#5d5a8c; --acc:#7a3ff0; --acc2:#0aa58c; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:32px 16px 56px; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px; }
+  .brand { display:flex; align-items:center; gap:12px; font-weight:800; font-size:22px; }
+  .brand img { width:44px; height:44px; border-radius:12px; }
+  .lang button { background:transparent; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:6px 12px; cursor:pointer; font:inherit; font-size:14px; }
+  .lang button[aria-pressed="true"] { color:var(--text); border-color:var(--acc); }
+  h1 { font-size:30px; line-height:1.2; margin:0 0 8px; }
+  p.lead { color:var(--muted); margin:0 0 24px; }
+  .btn { display:inline-block; background:linear-gradient(135deg,#7a3ff0,#c04cff); color:#fff; text-decoration:none; font-weight:700; padding:14px 22px; border-radius:999px; }
+  ol { list-style:none; counter-reset:s; padding:0; margin:28px 0; }
+  ol li { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 16px 16px 60px; margin:0 0 12px; position:relative; }
+  ol li::before { content:counter(s); position:absolute; left:16px; top:16px; width:30px; height:30px; border-radius:50%; background:var(--acc); color:#fff; font-weight:800; display:grid; place-items:center; }
+  ol li strong { display:block; margin-bottom:2px; }
+  ol li span { color:var(--muted); font-size:15px; }
+  code { background:rgba(127,127,200,.18); padding:2px 7px; border-radius:6px; font-size:.95em; word-break:break-all; }
+  .qr { display:flex; align-items:center; gap:16px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  #qr { background:#fff; padding:8px; border-radius:10px; line-height:0; }
+  .note { color:var(--muted); font-size:14px; margin-top:24px; }
+  [data-l] { display:none; } html[lang="fr"] [data-l="fr"], html[lang="en"] [data-l="en"] { display:revert; }
+  @media (max-width:480px){ .qr{flex-direction:column; align-items:flex-start;} h1{font-size:25px;} }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand"><img src="logo.png" alt=""> StreamX</div>
+    <div class="lang"><button id="bfr" aria-pressed="true">FR</button> <button id="ben" aria-pressed="false">EN</button></div>
+  </header>
+
+  <h1><span data-l="fr">Installer StreamX sur ta télé</span><span data-l="en">Install StreamX on your TV</span></h1>
+  <p class="lead"><span data-l="fr">Android TV, Google TV et Fire TV. Compte 2 minutes, une seule fois.</span><span data-l="en">Android TV, Google TV and Fire TV. Takes 2 minutes, only once.</span></p>
+
+  <ol>
+    <li data-l="fr"><strong>Installe Downloader</strong><span>Sur ta télé, ouvre le store (Play Store ou Appstore Amazon), cherche <b>Downloader</b> (icône orange) et installe-le.</span></li>
+    <li data-l="fr"><strong>Ouvre Downloader et tape l'adresse</strong><span>Dans la barre d'adresse, tape <code id="u1">yannveau-rgb.github.io/streamx-releases</code> puis valide. Appuie ensuite sur « Télécharger StreamX ».</span></li>
+    <li data-l="fr"><strong>Autorise l'installation (une fois)</strong><span>Si la télé le demande, active « Autoriser » pour Downloader. Puis appuie sur <b>Installer</b>.</span></li>
+    <li data-l="fr"><strong>Ouvre StreamX</strong><span>Connecte-toi avec les identifiants de ton abonnement. Les mises à jour te seront proposées dans la cloche en haut.</span></li>
+
+    <li data-l="en"><strong>Install Downloader</strong><span>On your TV, open the store (Play Store or Amazon Appstore), search for <b>Downloader</b> (orange icon) and install it.</span></li>
+    <li data-l="en"><strong>Open Downloader and type the address</strong><span>In the address bar type <code>yannveau-rgb.github.io/streamx-releases</code> and confirm. Then press "Download StreamX".</span></li>
+    <li data-l="en"><strong>Allow the installation (once)</strong><span>If the TV asks, turn on "Allow" for Downloader. Then press <b>Install</b>.</span></li>
+    <li data-l="en"><strong>Open StreamX</strong><span>Sign in with your subscription details. Updates will show up in the bell at the top.</span></li>
+  </ol>
+
+  <p><a class="btn" id="dl" href="https://github.com/yannveau-rgb/streamx-releases/releases/latest/download/streamx.apk"><span data-l="fr">Télécharger StreamX</span><span data-l="en">Download StreamX</span></a></p>
+
+  <div class="qr" style="margin-top:24px">
+    <div id="qr" aria-hidden="true"></div>
+    <div><strong><span data-l="fr">Depuis ton téléphone</span><span data-l="en">From your phone</span></strong><br>
+    <span style="color:var(--muted);font-size:15px"><span data-l="fr">Scanne ce code pour retrouver cette page, puis note l'adresse à taper sur la télé.</span><span data-l="en">Scan this code to open this page, then note the address to type on the TV.</span></span></div>
+  </div>
+
+  <p class="note"><span data-l="fr">StreamX est un lecteur : il ne fournit aucun contenu. Il te faut ton propre abonnement IPTV (Xtream).</span><span data-l="en">StreamX is a player: it provides no content. You need your own IPTV (Xtream) subscription.</span></p>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  (function(){
+    var lang = /^fr/i.test(navigator.language||"") ? "fr" : "en";
+    try { lang = localStorage.getItem("lang") || lang; } catch(e) {}
+    function set(l){
+      document.documentElement.lang = l;
+      document.getElementById("bfr").setAttribute("aria-pressed", l==="fr");
+      document.getElementById("ben").setAttribute("aria-pressed", l==="en");
+      try { localStorage.setItem("lang", l); } catch(e) {}
+    }
+    document.getElementById("bfr").onclick = function(){ set("fr"); };
+    document.getElementById("ben").onclick = function(){ set("en"); };
+    set(lang);
+    try { if (window.QRCode) new QRCode(document.getElementById("qr"), { text: location.href.split("#")[0], width:128, height:128 }); } catch(e) {}
+  })();
+</script>
+</body>
+</html>
